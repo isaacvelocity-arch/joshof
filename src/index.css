@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-of-blue: #00aff0;
+  --color-of-blue-hover: #008ccf;
+  --color-of-dark-bg: #161618;
+  --color-of-dark-card: #242529;
+  --color-of-dark-text: #f6f7f8;
+  --color-of-light-bg: #ffffff;
+  --color-of-light-text: #242529;
+  --color-of-border: rgba(138, 150, 163, 0.25);
+}
+
+@layer base {
+  body {
+    @apply bg-of-light-bg text-of-light-text font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .of-button-primary {
+    @apply bg-of-blue text-white font-bold py-3 px-6 rounded-full transition-all hover:bg-of-blue-hover active:scale-95 disabled:opacity-50;
+  }
+  
+  .of-button-outline {
+    @apply border border-of-blue text-of-blue font-bold py-3 px-6 rounded-full transition-all hover:bg-of-blue/10 active:scale-95;
+  }
+
+  .of-card {
+    @apply bg-white border border-of-border rounded-xl overflow-hidden shadow-sm;
+  }
+
+  .of-input {
+    @apply bg-white border border-of-border rounded-lg px-4 py-3 focus:border-of-blue outline-none transition-all text-of-light-text;
+  }
+
+  .text-secondary {
+    @apply text-[#8a96a3];
+  }
+}
+
+/* Scrollbar matching OF style */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cfd9de;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #bcc7cd;
+}
+
